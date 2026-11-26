@@ -1,20 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MANU TOP</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;background:#101010;color:#f5f5f5;font-family:Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:#101010;color:#f5f5f5;font-family:Arial,sans-serif}
 header{padding:20px;background:#171717;border-bottom:2px solid #e53935;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.logo{font-size:28px;font-weight:bold}.logo span{color:#e53935}nav a{color:white;text-decoration:none;margin:0 10px}
-.hero{padding:60px 20px;text-align:center;background:linear-gradient(135deg,#1c1c1c,#101010)}h1{font-size:36px}.hero p{color:#ccc}
-main{max-width:900px;margin:auto;padding:25px}section{padding:24px 0}.box{background:#1c1c1c;padding:30px;border-radius:12px;text-align:center;border:1px solid #333}
-button{background:#e53935;color:white;border:0;padding:12px 20px;border-radius:8px;font-weight:bold}
+.logo{font-size:28px;font-weight:bold;color:white}
+.logo span{color:#e53935}
+nav a{color:white;text-decoration:none;margin:10px}
+.hero{padding:60px 20px;text-align:center;background:linear-gradient(135deg,#351010,#101010)}
+.hero h1{font-size:36px}
+.hero p{color:#ccc}
+main{max-width:900px;margin:auto;padding:25px}
+.card{background:#1c1c1c;border:1px solid #333;border-radius:15px;padding:20px;margin:20px 0}
+.card h2{color:#e53935}
+button{background:#e53935;color:white;border:0;padding:14px 22px;border-radius:8px;font-weight:bold;font-size:16px}
+button:hover{background:#b71c1c}
 footer{text-align:center;color:#888;padding:30px}
-</style></head>
+</style>
+</head>
+
 <body>
-<header><div class="logo">MANU <span>TOP</span></div><nav><a href="#inicio">Início</a><a href="#jogos">Jogos</a><a href="#sobre">Sobre</a></nav></header>
-<div class="hero" id="inicio"><h1>Bem-vindo ao MANU TOP</h1><p>Conheça os jogos que eu crio, veja novidades e baixe os projetos para o seu dispositivo.</p></div>
-<main><section id="jogos"><h2>Jogos</h2><div class="box"><h3>Nenhum jogo disponível ainda</h3><p>Em breve, os jogos publicados aqui poderão ser baixados para o seu dispositivo.</p></div></section>
-<section id="sobre"><h2>Sobre o MANU TOP</h2><p>MANU TOP é um site para apresentar projetos de jogos e disponibilizar downloads quando estiverem publicados.</p></section></main>
-<footer>MANU TOP © 2026</footer></body></html>
+
+<header>
+<div class="logo">MANU <span>TOP</span></div>
+<nav>
+<a href="#inicio">Início</a>
+<a href="#jogos">Jogos</a>
+<a href="#sobre">Sobre</a>
+</nav>
+</header>
+
+<section class="hero" id="inicio">
+<h1>Bem-vindo ao MANU TOP!</h1>
+<p>Conheça os jogos que eu crio e baixe os projetos.</p>
+</section>
+
+<main>
+
+<section id="jogos">
+<h2>Jogos disponíveis</h2>
+
+<div class="card">
+<h2>MANU TOP CAR</h2>
+<p>Um jogo de carros criado por MANU TOP!</p>
+<p>Baixe e conheça o jogo.</p>
+
+<a href="MANU-TOP-CAR.apk" download>
+<button>BAIXAR JOGO</button>
+</a>
+
+</div>
+</section>
+
+<section class="card" id="sobre">
+<h2>Sobre</h2>
+<p>MANU TOP é um site para apresentar e disponibilizar downloads de jogos criados por mim.</p>
+</section>
+
+</main>
+
+<footer>
+MANU TOP © 2026
+</footer>
+
+</body>
+</html>
