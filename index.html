@@ -1,165 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MANU TOP</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09090c">
+<title>MANU TOP — Plataforma oficial de jogos</title>
 <style>
-* {
-box-sizing: border-box;
-}
-
-body {
-margin: 0;
-background: #101010;
-color: #f5f5f5;
-font-family: Arial, sans-serif;
-}
-
-header {
-padding: 20px;
-background: #171717;
-border-bottom: 2px solid #e53935;
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-wrap: wrap;
-}
-
-.logo {
-font-size: 28px;
-font-weight: bold;
-color: white;
-}
-
-.logo span {
-color: #e53935;
-}
-
-nav a {
-color: white;
-text-decoration: none;
-margin: 10px;
-}
-
-.hero {
-padding: 60px 20px;
-text-align: center;
-background: linear-gradient(135deg, #351010, #101010);
-}
-
-.hero h1 {
-font-size: 36px;
-}
-
-.hero p {
-color: #ccc;
-}
-
-main {
-max-width: 900px;
-margin: auto;
-padding: 25px;
-}
-
-#jogos h2 {
-font-size: 28px;
-}
-
-.card {
-background: #1c1c1c;
-border: 1px solid #333;
-border-radius: 15px;
-padding: 20px;
-margin: 20px 0;
-}
-
-.card h2 {
-color: #e53935;
-}
-
-.card p {
-color: #ddd;
-font-size: 17px;
-}
-
-button {
-background: #e53935;
-color: white;
-border: 0;
-padding: 14px 22px;
-border-radius: 8px;
-font-weight: bold;
-font-size: 16px;
-}
-
-button:hover {
-background: #b71c1c;
-}
-
-footer {
-text-align: center;
-color: #888;
-padding: 30px;
-}
+:root{color-scheme:dark;--bg:#09090c;--panel:#13131a;--panel2:#1a1a23;--line:#272733;--red:#e11d2e;--red2:#ff4757;--text:#f4f4f6;--mut:#9a9aa8;--r:18px;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100%);margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(9,9,12,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(9,9,12,.95);z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.06em;font-size:22px;font-style:italic}
+.logo svg{width:34px;height:34px;filter:drop-shadow(0 0 8px rgba(225,29,46,.7))}
+.logo b{color:var(--red);text-shadow:0 0 18px rgba(225,29,46,.55)}
+nav{display:flex;gap:4px}
+nav a{padding:10px 14px;border-radius:10px;color:var(--mut);font-weight:600;font-size:14px;transition:.2s}
+nav a:hover{color:#fff;background:var(--panel2)}
+.hero{position:relative;padding:72px 0 64px;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/44px 44px;opacity:.35;-webkit-mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%);mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%)}
+.glow{position:absolute;left:50%;top:-120px;width:640px;height:640px;margin-left:-320px;background:radial-gradient(circle,rgba(225,29,46,.4),transparent 65%);animation:pulse 6s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.18);opacity:.65}}
+.hero .wrap{position:relative}
+.pill{display:inline-flex;gap:8px;align-items:center;padding:7px 14px;border:1px solid rgba(225,29,46,.45);background:rgba(225,29,46,.1);border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ff8791}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--red2);animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+h1{font-size:clamp(46px,13vw,104px);line-height:1;margin:22px 0 16px;font-weight:900;font-style:italic;letter-spacing:.02em}
+h1 span{color:var(--red);text-shadow:0 0 40px rgba(225,29,46,.6)}
+.hero p{max-width:620px;margin:0 auto 30px;color:var(--mut);font-size:clamp(16px,2.4vw,19px)}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:14px;font-weight:800;font-size:16px;border:1px solid var(--line);background:var(--panel2);cursor:pointer;color:#fff;transition:.2s;font-family:inherit}
+.btn:hover{transform:translateY(-2px);border-color:#444}
+.btn.red{background:linear-gradient(135deg,var(--red2),var(--red));border:0;box-shadow:0 10px 30px -8px rgba(225,29,46,.75)}
+.btn.red:hover{box-shadow:0 14px 36px -6px rgba(255,71,87,.9)}
+.btn.off{opacity:.5;cursor:not-allowed;background:var(--panel2);box-shadow:none;border:1px dashed #444}
+.btn.off:hover{transform:none}
+.stats{display:flex;justify-content:center;gap:clamp(18px,6vw,56px);margin-top:46px;flex-wrap:wrap}
+.stats div{text-align:center}.stats strong{display:block;font-size:30px;color:#fff}.stats small{color:var(--mut);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+section{padding:60px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.head h2{margin:0;font-size:clamp(28px,5vw,40px);font-weight:900;font-style:italic}
+.head h2::after{content:"";display:block;width:56px;height:4px;margin-top:10px;border-radius:4px;background:var(--red)}
+.head p{margin:6px 0 0;color:var(--mut)}
+.search{background:var(--panel);border:1px solid var(--line);color:#fff;border-radius:12px;padding:0 16px;height:48px;min-width:min(260px,100%);font-size:16px;font-family:inherit}
+.search:focus{outline:2px solid var(--red);border-color:transparent}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(225,29,46,.6);box-shadow:0 20px 50px -20px rgba(225,29,46,.55)}
+.cover{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+.cover img,.cover svg{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.card:hover .cover img,.card:hover .cover svg{transform:scale(1.06)}
+.cover::after{content:"";position:absolute;inset:auto 0 0;height:50%;background:linear-gradient(transparent,var(--panel))}
+.ver{position:absolute;top:12px;left:12px;z-index:2;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.15);border-radius:99px;padding:4px 12px;font-size:12px;font-weight:800}
+.ver.new{background:var(--red);border-color:transparent}
+.body{padding:6px 20px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
+.body h3{margin:0;font-size:24px;font-weight:900;font-style:italic}
+.tag{color:#ff8791;font-size:13px;font-weight:700;margin-top:-8px}
+.body p{margin:0;color:var(--mut);font-size:15px}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.meta div{background:var(--panel2);border-radius:12px;padding:10px;text-align:center}
+.meta small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.meta b{font-size:14px}
+.body .btn{width:100%;margin-top:auto}
+details{border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;font-weight:700;font-size:14px;color:var(--mut);list-style:none;min-height:36px;display:flex;align-items:center;justify-content:space-between}
+summary::after{content:"+";font-size:20px;color:var(--red2)}details[open] summary::after{content:"–"}
+details ul{margin:8px 0 0;padding-left:18px;color:var(--mut);font-size:14px}
+.empty{grid-column:1/-1;text-align:center;padding:56px 20px;border:2px dashed var(--line);border-radius:var(--r);background:var(--panel)}
+.empty svg{width:64px;height:64px;color:var(--red);margin-bottom:10px;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.empty h3{margin:0 0 6px;font-size:22px}.empty p{margin:0;color:var(--mut)}
+.tl{position:relative;display:grid;gap:18px;padding-left:28px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--red),var(--line))}
+.up{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+.up::before{content:"";position:absolute;left:-28px;top:24px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--red)}
+.up.latest{border-color:rgba(225,29,46,.55)}
+.up.latest::before{background:var(--red);box-shadow:0 0 14px var(--red)}
+.up h4{margin:0 0 4px;font-size:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.up h4 em{font-style:normal;background:var(--red);font-size:11px;padding:3px 10px;border-radius:99px;letter-spacing:.08em}
+.up time{color:var(--mut);font-size:13px}
+.up ul{margin:10px 0 0;padding-left:18px;color:#cfcfd8;font-size:15px}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.feat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.feat span{font-size:30px}.feat h4{margin:10px 0 6px;font-size:18px}.feat p{margin:0;color:var(--mut);font-size:15px}
+footer{border-top:1px solid var(--line);padding:36px 0 44px;text-align:center;color:var(--mut);font-size:14px}
+footer .logo{justify-content:center;margin-bottom:10px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(max-width:640px){nav a{padding:10px 9px;font-size:13px}.logo{font-size:19px}.hero{padding-top:48px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
-
 <body>
+<header><div class="wrap bar">
+ <a class="logo" href="#inicio" aria-label="MANU TOP">
+  <svg viewBox="0 0 40 40"><path d="M20 2l15 9v18l-15 9-15-9V11z" fill="#e11d2e"/><path d="M16 13l12 7-12 7z" fill="#fff"/></svg>
+  <span>MANU <b>TOP</b></span></a>
+ <nav><a href="#jogos">Jogos</a><a href="#novidades">Novidades</a><a href="#sobre">Sobre</a></nav>
+</div></header>
 
-<header>
-<div class="logo">MANU <span>TOP</span></div>
+<main id="inicio">
+<div class="hero"><div class="glow"></div><div class="wrap">
+ <span class="pill"><i></i> Plataforma oficial</span>
+ <h1>MANU <span>TOP</span></h1>
+ <p>Jogos criados com paixão, prontos para baixar no seu celular. Acompanhe cada atualização e fique sempre com a versão mais recente.</p>
+ <div class="btns"><a class="btn red" href="#jogos">▶ Ver jogos</a><a class="btn" href="#novidades">Novidades</a></div>
+ <div class="stats"><div><strong id="sGames">0</strong><small>Jogos</small></div><div><strong id="sUps">0</strong><small>Atualizações</small></div><div><strong>APK</strong><small>Download direto</small></div></div>
+</div></div>
 
-<nav>
-<a href="#inicio">Início</a>
-<a href="#jogos">Jogos</a>
-<a href="#sobre">Sobre</a>
-</nav>
-</header>
+<section id="jogos"><div class="wrap">
+ <div class="head rv"><div><h2>Jogos</h2><p>Escolha, baixe e jogue.</p></div>
+ <input class="search" id="q" type="search" placeholder="Buscar jogo…" aria-label="Buscar jogo"></div>
+ <div class="grid" id="grid"></div>
+</div></section>
 
-<section class="hero" id="inicio">
-<h1>Bem-vindo ao MANU TOP!</h1>
-<p>Conheça os jogos que eu crio e baixe os projetos.</p>
-</section>
+<section id="novidades"><div class="wrap">
+ <div class="head rv"><div><h2>Novidades e atualizações</h2><p>Tudo o que mudou em cada versão.</p></div></div>
+ <div class="tl" id="tl"></div>
+</div></section>
 
-<main>
-
-<section id="jogos">
-<h2>Jogos disponíveis</h2>
-
-<div class="card">
-<h2>MANU TOP CAR</h2>
-<p>Um jogo de carros criado por MANU TOP!</p>
-<p>Baixe e conheça o jogo.</p>
-
-<a href="MANU-TOP-CAR.apk" download>
-<button>BAIXAR JOGO</button>
-</a>
-</div>
-
-<div class="card">
-<h2>MANU OFF-ROAD</h2>
-<p>Explore aventuras off-road e conheça o jogo MANU OFF-ROAD!</p>
-<p>Baixe agora o projeto.</p>
-
-<a href="Manu-offroad.apk" download>
-<button>BAIXAR JOGO</button>
-</a>
-</div>
-
-</section>
-
-<section class="card" id="sobre">
-<h2>Sobre</h2>
-<p>MANU TOP é um site para apresentar e disponibilizar downloads de jogos criados por mim.</p>
-</section>
-
+<section id="sobre"><div class="wrap">
+ <div class="head rv"><div><h2>Sobre o MANU TOP</h2><p>A casa oficial dos jogos da marca Manu.</p></div></div>
+ <div class="about">
+  <div class="feat rv"><span>🎮</span><h4>Jogos originais</h4><p>Cada jogo é feito do zero, com visual próprio e muita diversão.</p></div>
+  <div class="feat rv"><span>⚡</span><h4>Download rápido</h4><p>Baixe o APK direto, sem complicação, e instale no seu Android.</p></div>
+  <div class="feat rv"><span>🔄</span><h4>Sempre atualizado</h4><p>Veja a versão mais recente e o que há de novo antes de baixar.</p></div>
+ </div>
+</div></section>
 </main>
 
-<footer>
-MANU TOP © 2026
-</footer>
+<footer><div class="wrap">
+ <div class="logo"><svg viewBox="0 0 40 40" width="28" height="28"><path d="M20 2l15 9v18l-15 9-15-9V11z" fill="#e11d2e"/><path d="M16 13l12 7-12 7z" fill="#fff"/></svg><span>MANU <b>TOP</b></span></div>
+ © <span id="yr"></span> MANU TOP · Todos os direitos reservados.
+</div></footer>
 
+<script>
+/* ============ CONFIGURAÇÃO: edite só aqui para adicionar jogos ============
+   cover: link/caminho da imagem da capa (ex.: "capas/racer2.jpg"). Vazio = capa automática.
+   apkUrl: link do APK. Vazio = botão fica como "Em breve".
+   changelog: lista de atualizações (a mais nova primeiro). */
+const GAMES = [
+ /* Modelo (copie, tire os /* */ e preencha para adicionar um jogo):
+ {
+  name:"Nome do jogo", tagline:"Frase curta",
+  description:"Descrição do jogo.",
+  version:"1.0.0", size:"85 MB", updated:"2026-12-01", apkUrl:"link-do-apk", cover:"capas/jogo.jpg", hue:355,
+  extra:["Informação 1","Informação 2"],
+  changelog:[{version:"1.0.0",date:"2026-12-01",notes:["Lançamento inicial"]}]
+ }
+ */
+];
+/* ========================================================================= */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=d=>{const t=new Date(d+"T12:00:00");return isNaN(t)?"—":t.toLocaleDateString("pt-BR",{day:"2-digit",month:"short",year:"numeric"})};
+const isNew=d=>(Date.now()-new Date(d+"T12:00:00"))/864e5<=14;
+const art=(g)=>{const h=g.hue??355,ini=esc(g.name.split(" ").map(w=>w[0]).join("").slice(0,3));
+ return `<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g${h}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${h} 80% 45%)"/><stop offset="1" stop-color="hsl(${h} 60% 8%)"/></linearGradient></defs><rect width="320" height="180" fill="url(#g${h})"/><g stroke="#fff" stroke-opacity=".08" stroke-width="2"><path d="M-20 160L120 20M20 200L200 20M80 200L260 20M140 200L320 20"/></g><text x="160" y="108" text-anchor="middle" font-size="64" font-weight="900" font-style="italic" fill="#fff" fill-opacity=".92" font-family="Segoe UI,Arial">${ini}</text></svg>`};
+function card(g){
+ const cover=g.cover?`<img src="${esc(g.cover)}" alt="Capa de ${esc(g.name)}" loading="lazy">`:art(g);
+ const latest=isNew(g.updated);
+ const dl=g.apkUrl?`<a class="btn red" href="${esc(g.apkUrl)}" download target="_blank" rel="noopener">⬇ Baixar APK${g.size?` · ${esc(g.size)}`:""}</a>`:`<span class="btn off" role="button" aria-disabled="true">⏳ Download em breve</span>`;
+ return `<article class="card rv"><div class="cover"><span class="ver${latest?" new":""}">${latest?"NOVO · ":""}v${esc(g.version)}</span>${cover}</div>
+ <div class="body"><h3>${esc(g.name)}</h3>${g.tagline?`<div class="tag">${esc(g.tagline)}</div>`:""}<p>${esc(g.description)}</p>
+ <div class="meta"><div><small>Versão</small><b>${esc(g.version)}</b></div><div><small>Tamanho</small><b>${esc(g.size||"A definir")}</b></div><div><small>Atualizado</small><b>${fmt(g.updated)}</b></div></div>
+ ${g.extra&&g.extra.length?`<details><summary>Informações adicionais</summary><ul>${g.extra.map(e=>`<li>${esc(e)}</li>`).join("")}</ul></details>`:""}
+ ${dl}</div></article>`}
+function renderGames(f=""){
+ const list=GAMES.filter(g=>g.name.toLowerCase().includes(f.toLowerCase()));
+ $("#grid").innerHTML=list.length?list.map(card).join(""):
+ `<div class="empty rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="12" rx="5"/><path d="M7 10v4M5 12h4M16 11h.01M18 13h.01"/></svg><h3>${GAMES.length?"Nenhum jogo encontrado":"Ainda não há jogos disponíveis"}</h3><p>${GAMES.length?"Tente buscar outro nome.":"Novos jogos chegam em breve. Volte logo!"}</p></div>`;
+ reveal()}
+function renderUps(){
+ const ups=GAMES.flatMap(g=>(g.changelog||[]).map(c=>({...c,game:g.name}))).sort((a,b)=>b.date.localeCompare(a.date));
+ $("#sUps").textContent=ups.length;
+ $("#tl").innerHTML=ups.length?ups.map((u,i)=>`<div class="up rv${i===0?" latest":""}"><h4>${esc(u.game)} · v${esc(u.version)}${i===0?" <em>MAIS RECENTE</em>":""}</h4><time>${fmt(u.date)}</time><ul>${(u.notes||[]).map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`).join(""):
+ `<div class="empty rv"><h3>Sem novidades por enquanto</h3><p>As atualizações dos jogos aparecerão aqui.</p></div>`}
+let io;function reveal(){io=io||new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll(".rv:not(.in)").forEach(e=>io.observe(e))}
+$("#sGames").textContent=GAMES.length;$("#yr").textContent=new Date().getFullYear();
+$("#q").addEventListener("input",e=>renderGames(e.target.value));
+renderGames();renderUps();reveal();
+</script>
 </body>
 </html>
